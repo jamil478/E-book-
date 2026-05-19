@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Stillness in the Storm — A Soul Guide for Deeply Emotional Hearts</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400;1,600&family=Cinzel:wght@400;600&family=Lato:wght@300;400&display=swap" rel="stylesheet"/>
+<style>
+  :root {
+    --navy: #111827;
+    --deep: #0d1420;
+    --gold: #c9a96e;
+    --gold-light: #e2c89a;
+    --cream: #faf6ee;
+    --soft: #e8e0d0;
+    --muted: #8a9ab5;
+    --purple: #3d2b56;
+    --teal: #4a8fa5;
+    --white: #ffffff;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body { background: var(--deep); color: var(--cream); font-family: 'Lato', sans-serif; font-weight: 300; overflow-x: hidden; }
+
+  .hero {
+    min-height: 100vh;
+    display: flex; flex-direction: column; align-items: center; justify-content: center;
+    position: relative; padding: 60px 24px 80px;
+    background: radial-gradient(ellipse at 60% 0%, #1e2f50 0%, var(--deep) 60%);
+    overflow: hidden;
+  }
+  .hero::before {
+    content: ''; position: absolute; top: -100px; right: -100px;
+    width: 500px; height: 500px;
+    background: radial-gradient(circle, rgba(201,169,110,0.08) 0%, transparent 70%);
+    pointer-events: none;
+  }
+  .star-top { font-size: 22px; color: var(--gold); letter-spacing: 12px; margin-bottom: 28px; opacity: 0; animation: fadeUp 1s ease 0.2s forwards; }
+  .hero-eyebrow { font-family: 'Cinzel', serif; font-size: clamp(10px,2vw,13px); letter-spacing: 5px; color: var(--muted); text-transform: uppercase; margin-bottom: 20px; opacity: 0; animation: fadeUp 1s ease 0.3s forwards; }
+  .hero-title { font-family: 'Cormorant Garamond', serif; font-size: clamp(44px,9vw,88px); font-weight: 300; font-style: italic; line-height: 1.05; text-align: center; color: var(--white); margin-bottom: 16px; opacity: 0; animation: fadeUp 1s ease 0.5s forwards; text-shadow: 0 4px 40px rgba(201,169,110,0.15); }
+  .hero-title span { color: var(--gold); }
+  .hero-subtitle { font-family: 'Cormorant Garamond', serif; font-size: clamp(15px,3vw,20px); font-style: italic; font-weight: 300; color: var(--muted); text-align: center; margin-bottom: 40px; opacity: 0; animation: fadeUp 1s ease 0.7s forwards; }
+
+  .cover-gallery { display: flex; gap: 16px; justify-content: center; align-items: flex-end; flex-wrap: wrap; margin: 40px 0 50px; opacity: 0; animation: fadeUp 1s ease 0.9s forwards; }
+  .cover-gallery img { border-radius: 8px; box-shadow: 0 20px 60px rgba(0,0,0,0.6), 0 0 0 1px rgba(201,169,110,0.2); transition: transform 0.4s ease, box-shadow 0.4s ease; object-fit: cover; }
+  .cover-gallery img:nth-child(1) { width: 120px; height: 170px; transform: rotate(-4deg); }
+  .cover-gallery img:nth-child(2) { width: 150px; height: 210px; transform: rotate(-1deg); z-index: 2; }
+  .cover-gallery img:nth-child(3) { width: 140px; height: 195px; transform: rotate(2deg); }
+  .cover-gallery img:nth-child(4) { width: 115px; height: 160px; transform: rotate(4deg); }
+  .cover-gallery img:hover { transform: rotate(0deg) scale(1.07) translateY(-8px) !important; box-shadow: 0 30px 80px rgba(0,0,0,0.7), 0 0 0 1px rgba(201,169,110,0.4); z-index: 10; }
+
+  .divider { width: 60px; height: 1px; background: var(--gold); margin: 0 auto 20px; opacity: 0.6; }
+  .tagline { font-family: 'Cormorant Garamond', serif; font-size: clamp(18px,3.5vw,26px); font-style: italic; text-align: center; color: var(--cream); max-width: 640px; line-height: 1.6; opacity: 0; animation: fadeUp 1s ease 1.1s forwards; margin-bottom: 12px; }
+
+  .cta-wrap { margin-top: 44px; display: flex; flex-direction: column; align-items: center; gap: 14px; opacity: 0; animation: fadeUp 1s ease 1.3s forwards; }
+  .price-tag { font-family: 'Cinzel', serif; font-size: 13px; letter-spacing: 3px; color: var(--muted); text-transform: uppercase; }
+  .price-tag strong { color: var(--gold); font-size: 22px; font-family: 'Cormorant Garamond', serif; font-style: italic; letter-spacing: 1px; }
+  .cta-btn { display: inline-block; background: linear-gradient(135deg, #25D366 0%, #1da851 100%); color: white; text-decoration: none; font-family: 'Cinzel', serif; font-size: 14px; letter-spacing: 3px; text-transform: uppercase; padding: 18px 48px; border-radius: 3px; position: relative; overflow: hidden; transition: all 0.3s ease; box-shadow: 0 8px 30px rgba(37,211,102,0.3); cursor: pointer; }
+  .cta-btn::before { content: ''; position: absolute; top: 0; left: -100%; width: 100%; height: 100%; background: linear-gradient(90deg, transparent, rgba(255,255,255,0.15), transparent); transition: left 0.5s ease; }
+  .cta-btn:hover::before { left: 100%; }
+  .cta-btn:hover { transform: translateY(-2px); box-shadow: 0 14px 40px rgba(37,211,102,0.45); }
+  .cta-btn .wa-icon { margin-right: 10px; font-size: 18px; }
+  .cta-note { font-size: 12px; color: var(--muted); letter-spacing: 1px; }
+
+  .about { background: #0f1825; padding: 90px 24px; text-align: center; }
+  .section-label { font-family: 'Cinzel', serif; font-size: 11px; letter-spacing: 6px; color: var(--gold); text-transform: uppercase; margin-bottom: 20px; display: block; }
+  .section-title { font-family: 'Cormorant Garamond', serif; font-size: clamp(28px,5vw,46px); font-weight: 300; font-style: italic; color: var(--white); line-height: 1.2; margin-bottom: 30px; max-width: 700px; margin-left: auto; margin-right: auto; }
+  .about-text { font-size: clamp(14px,2vw,16px); line-height: 1.9; color: #b0bcd4; max-width: 620px; margin: 0 auto; }
+  .about-text p + p { margin-top: 18px; }
+
+  .feelings { background: linear-gradient(180deg, #0f1825 0%, var(--deep) 100%); padding: 80px 24px; }
+  .feelings-inner { max-width: 700px; margin: 0 auto; text-align: center; }
+  .feelings-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 16px; margin-top: 44px; }
+  .feeling-card { background: rgba(255,255,255,0.03); border: 1px solid rgba(201,169,110,0.15); border-radius: 6px; padding: 24px 20px; transition: all 0.3s ease; }
+  .feeling-card:hover { background: rgba(201,169,110,0.06); border-color: rgba(201,169,110,0.35); transform: translateY(-3px); }
+  .feeling-icon { font-size: 26px; margin-bottom: 12px; }
+  .feeling-text { font-family: 'Cormorant Garamond', serif; font-size: 15px; font-style: italic; color: #c5cfe0; line-height: 1.6; }
+
+  .chapters { background: #0a1018; padding: 90px 24px; }
+  .chapters-inner { max-width: 700px; margin: 0 auto; }
+  .chapter-list { margin-top: 50px; display: flex; flex-direction: column; gap: 0; }
+  .ch-item { display: flex; align-items: flex-start; gap: 20px; padding: 22px 0; border-bottom: 1px solid rgba(255,255,255,0.05); transition: all 0.3s ease; cursor: default; }
+  .ch-item:hover { padding-left: 8px; }
+  .ch-item:last-child { border-bottom: none; }
+  .ch-num { font-family: 'Cinzel', serif; font-size: 11px; letter-spacing: 2px; color: var(--gold); min-width: 28px; margin-top: 4px; }
+  .ch-title { font-family: 'Cormorant Garamond', serif; font-size: clamp(17px,2.5vw,21px); font-weight: 400; color: var(--cream); margin-bottom: 4px; }
+  .ch-desc { font-size: 13px; color: var(--muted); line-height: 1.5; }
+
+  .quote-banner { background: linear-gradient(135deg, #1a2d4a 0%, #1e2040 100%); padding: 80px 24px; text-align: center; position: relative; overflow: hidden; }
+  .quote-banner::before { content: '\275D'; position: absolute; top: 20px; left: 50%; transform: translateX(-50%); font-size: 120px; color: rgba(201,169,110,0.06); font-family: 'Cormorant Garamond', serif; pointer-events: none; }
+  .big-quote { font-family: 'Cormorant Garamond', serif; font-size: clamp(22px,4vw,36px); font-style: italic; font-weight: 300; color: var(--white); max-width: 700px; margin: 0 auto 24px; line-height: 1.5; position: relative; z-index: 1; }
+  .big-quote em { color: var(--gold); font-style: normal; }
+
+  .for-you { background: var(--deep); padding: 90px 24px; }
+  .for-you-inner { max-width: 680px; margin: 0 auto; text-align: center; }
+  .for-list { list-style: none; margin-top: 44px; display: flex; flex-direction: column; gap: 16px; text-align: left; }
+  .for-list li { display: flex; align-items: flex-start; gap: 14px; background: rgba(255,255,255,0.02); border-left: 2px solid var(--gold); padding: 16px 20px; border-radius: 0 4px 4px 0; font-size: 15px; color: #c0cce0; line-height: 1.6; }
+  .for-list .dot { color: var(--gold); font-size: 18px; margin-top: 1px; flex-shrink: 0; }
+
+  .final-cta { background: linear-gradient(180deg, #0a1018 0%, #111827 100%); padding: 100px 24px; text-align: center; }
+  .gold-line { width: 80px; height: 1px; background: var(--gold); margin: 24px auto; }
+  .final-note { font-family: 'Cormorant Garamond', serif; font-size: clamp(16px,2.5vw,22px); font-style: italic; color: var(--muted); max-width: 500px; margin: 0 auto 50px; line-height: 1.7; }
+
+  footer { background: #080d14; padding: 30px 24px; text-align: center; font-size: 12px; color: #3a4a5a; letter-spacing: 1px; }
+
+  @keyframes fadeUp { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
+  .reveal { opacity: 0; transform: translateY(40px); transition: opacity 0.8s ease, transform 0.8s ease; }
+  .reveal.visible { opacity: 1; transform: translateY(0); }
+
+  @media(max-width: 600px) {
+    .cover-gallery img:nth-child(1), .cover-gallery img:nth-child(4) { display: none; }
+    .cover-gallery img:nth-child(2) { width: 140px; height: 196px; }
+    .cover-gallery img:nth-child(3) { width: 125px; height: 175px; }
+  }
+</style>
+</head>
+<body>
+
+<section class="hero">
+  <div class="star-top">✦ ✦ ✦</div>
+  <div class="hero-eyebrow">A Complete Self-Help eBook</div>
+  <h1 class="hero-title">Stillness in<br/><span>the Storm</span></h1>
+  <p class="hero-subtitle">A Soul Guide for the Deeply Emotional Heart</p>
+
+  <div class="cover-gallery">
+    <img src="https://raw.githubusercontent.com/jamil478/My-sobi-/refs/heads/main/1000090894.png" alt="Cover"/>
+    <img src="https://raw.githubusercontent.com/jamil478/My-sobi-/refs/heads/main/1000090896.png" alt="Cover"/>
+    <img src="https://raw.githubusercontent.com/jamil478/My-sobi-/refs/heads/main/1000090898.png" alt="Cover"/>
+    <img src="https://raw.githubusercontent.com/jamil478/My-sobi-/refs/heads/main/1000090900.png" alt="Cover"/>
+  </div>
+
+  <div class="divider"></div>
+  <p class="tagline">"You were never broken.<br/>You were just never shown how to find your calm."</p>
+
+  <div class="cta-wrap">
+    <div class="price-tag">Get Your Copy Today — Only <strong>$6.99</strong></div>
+    <a class="cta-btn" href="#" onclick="sendWhatsApp(event)">
+      <span class="wa-icon">💬</span> Order via WhatsApp
+    </a>
+    <span class="cta-note">You'll receive your PDF instantly after payment</span>
+  </div>
+</section>
+
+<section class="about">
+  <span class="section-label reveal">About This Book</span>
+  <h2 class="section-title reveal">For the ones who feel everything — deeply, fiercely, quietly.</h2>
+  <div class="about-text reveal">
+    <p>If you have ever cried without knowing exactly why, felt someone else's pain as if it were your own, or stayed up at 2am replaying a conversation that everyone else forgot — this book was written for you.</p>
+    <p>Written by Jamil, <em>Stillness in the Storm</em> is a deeply personal guide for emotionally sensitive people aged 20 and above — both men and women — who are ready to stop suffering in silence and start building real, lasting inner peace.</p>
+    <p>This is not a book that tells you to feel less. It is a book that teaches you how to feel fully — without losing yourself in the storm.</p>
+  </div>
+</section>
+
+<section class="feelings">
+  <div class="feelings-inner">
+    <span class="section-label reveal">Do You Feel This?</span>
+    <h2 class="section-title reveal">You are not alone in these moments…</h2>
+    <div class="feelings-grid">
+      <div class="feeling-card reveal"><div class="feeling-icon">🌊</div><p class="feeling-text">Emotions that feel too big to hold — flooding you without warning</p></div>
+      <div class="feeling-card reveal"><div class="feeling-icon">🌙</div><p class="feeling-text">Lying awake at night, replaying words said and unsaid</p></div>
+      <div class="feeling-card reveal"><div class="feeling-icon">💔</div><p class="feeling-text">Feeling "too much" in a world that never slows down for you</p></div>
+      <div class="feeling-card reveal"><div class="feeling-icon">🫂</div><p class="feeling-text">Carrying other people's pain as if it belongs to you</p></div>
+      <div class="feeling-card reveal"><div class="feeling-icon">😶</div><p class="feeling-text">Saying yes when every part of you wants to say no</p></div>
+      <div class="feeling-card reveal"><div class="feeling-icon">✨</div><p class="feeling-text">Craving peace — but not knowing how to actually get there</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="chapters">
+  <div class="chapters-inner">
+    <span class="section-label reveal">Inside the Book</span>
+    <h2 class="section-title reveal">9 Chapters of Genuine Transformation</h2>
+    <div class="chapter-list">
+      <div class="ch-item reveal"><span class="ch-num">✦</span><div class="ch-content"><div class="ch-title">A Letter to You — Before You Begin</div><div class="ch-desc">A personal opening that meets you exactly where you are</div></div></div>
+      <div class="ch-item reveal"><span class="ch-num">01</span><div class="ch-content"><div class="ch-title">Understanding Your Emotional World</div><div class="ch-desc">Why you feel so deeply — and why that is a gift, not a flaw</div></div></div>
+      <div class="ch-item reveal"><span class="ch-num">02</span><div class="ch-content"><div class="ch-title">Why Highly Emotional People Struggle More</div><div class="ch-desc">The real reasons sensitivity makes life harder — and what to do about it</div></div></div>
+      <div class="ch-item reveal"><span class="ch-num">03</span><div class="ch-content"><div class="ch-title">The Art of Feeling Without Drowning</div><div class="ch-desc">How to let emotions move through you instead of consuming you</div></div></div>
+      <div class="ch-item reveal"><span class="ch-num">04</span><div class="ch-content"><div class="ch-title">Healing the Mind, One Thought at a Time</div><div class="ch-desc">Breaking the patterns of overthinking, catastrophizing and self-blame</div></div></div>
+      <div class="ch-item reveal"><span class="ch-num">05</span><div class="ch-content"><div class="ch-title">Building Inner Peace as a Daily Habit</div><div class="ch-desc">Simple rituals that create calm no matter how loud the world gets</div></div></div>
+      <div class="ch-item reveal"><span class="ch-num">06</span><div class="ch-content"><div class="ch-title">Setting Boundaries Without Guilt</div><div class="ch-desc">How to protect your peace while still being a loving, caring person</div></div></div>
+      <div class="ch-item reveal"><span class="ch-num">07</span><div class="ch-content"><div class="ch-title">Letting Go of What You Cannot Control</div><div class="ch-desc">Finding freedom by releasing the past and anxiety of the future</div></div></div>
+      <div class="ch-item reveal"><span class="ch-num">08</span><div class="ch-content"><div class="ch-title">Self-Compassion — Being Kind to Yourself</div><div class="ch-desc">The most powerful thing you can do — and the hardest for emotional people</div></div></div>
+      <div class="ch-item reveal"><span class="ch-num">09</span><div class="ch-content"><div class="ch-title">Finding Calm in a Chaotic World</div><div class="ch-desc">Building your inner sanctuary — no matter what is happening outside</div></div></div>
+    </div>
+  </div>
+</section>
+
+<section class="quote-banner">
+  <p class="big-quote reveal">"You have been so kind to so many people.<br/>It is time to include <em>yourself</em> in that circle of care."</p>
+  <div class="divider"></div>
+</section>
+
+<section class="for-you">
+  <div class="for-you-inner">
+    <span class="section-label reveal">Is This Book For You?</span>
+    <h2 class="section-title reveal">This book is for you if…</h2>
+    <ul class="for-list">
+      <li class="reveal"><span class="dot">✦</span> You are 20+ years old and feel emotions more intensely than most people around you</li>
+      <li class="reveal"><span class="dot">✦</span> You are a man or woman who has been told you are "too sensitive" or "too emotional"</li>
+      <li class="reveal"><span class="dot">✦</span> You absorb the energy of others and often feel drained after social interactions</li>
+      <li class="reveal"><span class="dot">✦</span> You lie awake at night overthinking conversations, choices, or fears about the future</li>
+      <li class="reveal"><span class="dot">✦</span> You want to stop suffering in silence and finally feel at home inside your own mind</li>
+      <li class="reveal"><span class="dot">✦</span> You are ready to find peace — not someday, but starting today</li>
+    </ul>
+  </div>
+</section>
+
+<section class="final-cta">
+  <span class="section-label reveal">Get Your Copy</span>
+  <h2 class="section-title reveal" style="font-size:clamp(30px,6vw,58px);font-style:italic;color:#fff;">Your stillness is waiting.</h2>
+  <div class="gold-line"></div>
+  <p class="final-note reveal">A complete PDF eBook, delivered to you personally.<br/>Read at your own pace. Return whenever the storm arrives.</p>
+  <div class="cta-wrap reveal" style="opacity:1;animation:none;">
+    <div class="price-tag">One-time payment — only <strong>$6.99</strong></div>
+    <a class="cta-btn" href="#" onclick="sendWhatsApp(event)"><span class="wa-icon">💬</span> Order on WhatsApp Now</a>
+    <span class="cta-note">Message Jamil directly · Fast &amp; Secure · PDF sent instantly</span>
+  </div>
+  <div style="margin-top:60px;opacity:0.3;">
+    <div class="divider"></div>
+    <p style="font-family:'Cormorant Garamond',serif;font-style:italic;font-size:16px;color:var(--muted);">✦ Stillness in the Storm ✦</p>
+  </div>
+</section>
+
+<footer>
+  <span>© 2025 Jamil · Stillness in the Storm · All rights reserved</span>
+</footer>
+
+<script>
+  function sendWhatsApp(e) {
+    e.preventDefault();
+    var number = '8801616700055';
+    var msg = encodeURIComponent("Hi Jamil! \ud83d\udc4b\n\nI'd like to order the eBook:\n\ud83d\udcd6 *Stillness in the Storm* \u2014 $6.99\n\nPlease send me the payment details. Thank you!");
+    window.open('https://wa.me/' + number + '?text=' + msg, '_blank');
+  }
+
+  var reveals = document.querySelectorAll('.reveal');
+  var observer = new IntersectionObserver(function(entries) {
+    entries.forEach(function(entry) {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.12 });
+  reveals.forEach(function(el) { observer.observe(el); });
+</script>
+</body>
+</html>
