@@ -1,248 +1,762 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8"/>
-<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<title>Stillness in the Storm — A Soul Guide for Deeply Emotional Hearts</title>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400;1,600&family=Cinzel:wght@400;600&family=Lato:wght@300;400&display=swap" rel="stylesheet"/>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Stillness in the Storm — by Jamil</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
 <style>
-  :root {
-    --navy: #111827;
-    --deep: #0d1420;
-    --gold: #c9a96e;
-    --gold-light: #e2c89a;
-    --cream: #faf6ee;
-    --soft: #e8e0d0;
-    --muted: #8a9ab5;
-    --purple: #3d2b56;
-    --teal: #4a8fa5;
-    --white: #ffffff;
-  }
-  * { margin: 0; padding: 0; box-sizing: border-box; }
-  html { scroll-behavior: smooth; }
-  body { background: var(--deep); color: var(--cream); font-family: 'Lato', sans-serif; font-weight: 300; overflow-x: hidden; }
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
+  :root {
+    --cream: #f9f3ec;
+    --warm: #e8ddd0;
+    --brown: #7a5c44;
+    --dark: #2b1f17;
+    --gold: #c9974a;
+    --soft: #a08070;
+  }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: var(--cream);
+    color: var(--dark);
+    font-family: 'DM Sans', sans-serif;
+    overflow-x: hidden;
+  }
+
+  /* ── HERO ── */
   .hero {
     min-height: 100vh;
-    display: flex; flex-direction: column; align-items: center; justify-content: center;
-    position: relative; padding: 60px 24px 80px;
-    background: radial-gradient(ellipse at 60% 0%, #1e2f50 0%, var(--deep) 60%);
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    position: relative;
     overflow: hidden;
   }
+
   .hero::before {
-    content: ''; position: absolute; top: -100px; right: -100px;
-    width: 500px; height: 500px;
-    background: radial-gradient(circle, rgba(201,169,110,0.08) 0%, transparent 70%);
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(ellipse at 70% 40%, #e8d5c0 0%, transparent 60%);
     pointer-events: none;
   }
-  .star-top { font-size: 22px; color: var(--gold); letter-spacing: 12px; margin-bottom: 28px; opacity: 0; animation: fadeUp 1s ease 0.2s forwards; }
-  .hero-eyebrow { font-family: 'Cinzel', serif; font-size: clamp(10px,2vw,13px); letter-spacing: 5px; color: var(--muted); text-transform: uppercase; margin-bottom: 20px; opacity: 0; animation: fadeUp 1s ease 0.3s forwards; }
-  .hero-title { font-family: 'Cormorant Garamond', serif; font-size: clamp(44px,9vw,88px); font-weight: 300; font-style: italic; line-height: 1.05; text-align: center; color: var(--white); margin-bottom: 16px; opacity: 0; animation: fadeUp 1s ease 0.5s forwards; text-shadow: 0 4px 40px rgba(201,169,110,0.15); }
-  .hero-title span { color: var(--gold); }
-  .hero-subtitle { font-family: 'Cormorant Garamond', serif; font-size: clamp(15px,3vw,20px); font-style: italic; font-weight: 300; color: var(--muted); text-align: center; margin-bottom: 40px; opacity: 0; animation: fadeUp 1s ease 0.7s forwards; }
 
-  .cover-gallery { display: flex; gap: 16px; justify-content: center; align-items: flex-end; flex-wrap: wrap; margin: 40px 0 50px; opacity: 0; animation: fadeUp 1s ease 0.9s forwards; }
-  .cover-gallery img { border-radius: 8px; box-shadow: 0 20px 60px rgba(0,0,0,0.6), 0 0 0 1px rgba(201,169,110,0.2); transition: transform 0.4s ease, box-shadow 0.4s ease; object-fit: cover; }
-  .cover-gallery img:nth-child(1) { width: 120px; height: 170px; transform: rotate(-4deg); }
-  .cover-gallery img:nth-child(2) { width: 150px; height: 210px; transform: rotate(-1deg); z-index: 2; }
-  .cover-gallery img:nth-child(3) { width: 140px; height: 195px; transform: rotate(2deg); }
-  .cover-gallery img:nth-child(4) { width: 115px; height: 160px; transform: rotate(4deg); }
-  .cover-gallery img:hover { transform: rotate(0deg) scale(1.07) translateY(-8px) !important; box-shadow: 0 30px 80px rgba(0,0,0,0.7), 0 0 0 1px rgba(201,169,110,0.4); z-index: 10; }
+  .hero-left {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 80px 60px 80px 80px;
+    position: relative;
+    z-index: 2;
+  }
 
-  .divider { width: 60px; height: 1px; background: var(--gold); margin: 0 auto 20px; opacity: 0.6; }
-  .tagline { font-family: 'Cormorant Garamond', serif; font-size: clamp(18px,3.5vw,26px); font-style: italic; text-align: center; color: var(--cream); max-width: 640px; line-height: 1.6; opacity: 0; animation: fadeUp 1s ease 1.1s forwards; margin-bottom: 12px; }
+  .badge {
+    display: inline-block;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--gold);
+    border: 1px solid var(--gold);
+    padding: 6px 16px;
+    border-radius: 20px;
+    margin-bottom: 32px;
+    width: fit-content;
+  }
 
-  .cta-wrap { margin-top: 44px; display: flex; flex-direction: column; align-items: center; gap: 14px; opacity: 0; animation: fadeUp 1s ease 1.3s forwards; }
-  .price-tag { font-family: 'Cinzel', serif; font-size: 13px; letter-spacing: 3px; color: var(--muted); text-transform: uppercase; }
-  .price-tag strong { color: var(--gold); font-size: 22px; font-family: 'Cormorant Garamond', serif; font-style: italic; letter-spacing: 1px; }
-  .cta-btn { display: inline-block; background: linear-gradient(135deg, #25D366 0%, #1da851 100%); color: white; text-decoration: none; font-family: 'Cinzel', serif; font-size: 14px; letter-spacing: 3px; text-transform: uppercase; padding: 18px 48px; border-radius: 3px; position: relative; overflow: hidden; transition: all 0.3s ease; box-shadow: 0 8px 30px rgba(37,211,102,0.3); cursor: pointer; }
-  .cta-btn::before { content: ''; position: absolute; top: 0; left: -100%; width: 100%; height: 100%; background: linear-gradient(90deg, transparent, rgba(255,255,255,0.15), transparent); transition: left 0.5s ease; }
-  .cta-btn:hover::before { left: 100%; }
-  .cta-btn:hover { transform: translateY(-2px); box-shadow: 0 14px 40px rgba(37,211,102,0.45); }
-  .cta-btn .wa-icon { margin-right: 10px; font-size: 18px; }
-  .cta-note { font-size: 12px; color: var(--muted); letter-spacing: 1px; }
+  .hero-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(3rem, 5vw, 5.5rem);
+    font-weight: 300;
+    line-height: 1.1;
+    color: var(--dark);
+    margin-bottom: 12px;
+  }
 
-  .about { background: #0f1825; padding: 90px 24px; text-align: center; }
-  .section-label { font-family: 'Cinzel', serif; font-size: 11px; letter-spacing: 6px; color: var(--gold); text-transform: uppercase; margin-bottom: 20px; display: block; }
-  .section-title { font-family: 'Cormorant Garamond', serif; font-size: clamp(28px,5vw,46px); font-weight: 300; font-style: italic; color: var(--white); line-height: 1.2; margin-bottom: 30px; max-width: 700px; margin-left: auto; margin-right: auto; }
-  .about-text { font-size: clamp(14px,2vw,16px); line-height: 1.9; color: #b0bcd4; max-width: 620px; margin: 0 auto; }
-  .about-text p + p { margin-top: 18px; }
+  .hero-title em {
+    font-style: italic;
+    color: var(--brown);
+  }
 
-  .feelings { background: linear-gradient(180deg, #0f1825 0%, var(--deep) 100%); padding: 80px 24px; }
-  .feelings-inner { max-width: 700px; margin: 0 auto; text-align: center; }
-  .feelings-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 16px; margin-top: 44px; }
-  .feeling-card { background: rgba(255,255,255,0.03); border: 1px solid rgba(201,169,110,0.15); border-radius: 6px; padding: 24px 20px; transition: all 0.3s ease; }
-  .feeling-card:hover { background: rgba(201,169,110,0.06); border-color: rgba(201,169,110,0.35); transform: translateY(-3px); }
-  .feeling-icon { font-size: 26px; margin-bottom: 12px; }
-  .feeling-text { font-family: 'Cormorant Garamond', serif; font-size: 15px; font-style: italic; color: #c5cfe0; line-height: 1.6; }
+  .hero-subtitle {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.2rem;
+    font-style: italic;
+    color: var(--soft);
+    margin-bottom: 28px;
+    font-weight: 300;
+  }
 
-  .chapters { background: #0a1018; padding: 90px 24px; }
-  .chapters-inner { max-width: 700px; margin: 0 auto; }
-  .chapter-list { margin-top: 50px; display: flex; flex-direction: column; gap: 0; }
-  .ch-item { display: flex; align-items: flex-start; gap: 20px; padding: 22px 0; border-bottom: 1px solid rgba(255,255,255,0.05); transition: all 0.3s ease; cursor: default; }
-  .ch-item:hover { padding-left: 8px; }
-  .ch-item:last-child { border-bottom: none; }
-  .ch-num { font-family: 'Cinzel', serif; font-size: 11px; letter-spacing: 2px; color: var(--gold); min-width: 28px; margin-top: 4px; }
-  .ch-title { font-family: 'Cormorant Garamond', serif; font-size: clamp(17px,2.5vw,21px); font-weight: 400; color: var(--cream); margin-bottom: 4px; }
-  .ch-desc { font-size: 13px; color: var(--muted); line-height: 1.5; }
+  .hero-author {
+    font-size: 13px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--brown);
+    margin-bottom: 40px;
+    font-weight: 500;
+  }
 
-  .quote-banner { background: linear-gradient(135deg, #1a2d4a 0%, #1e2040 100%); padding: 80px 24px; text-align: center; position: relative; overflow: hidden; }
-  .quote-banner::before { content: '\275D'; position: absolute; top: 20px; left: 50%; transform: translateX(-50%); font-size: 120px; color: rgba(201,169,110,0.06); font-family: 'Cormorant Garamond', serif; pointer-events: none; }
-  .big-quote { font-family: 'Cormorant Garamond', serif; font-size: clamp(22px,4vw,36px); font-style: italic; font-weight: 300; color: var(--white); max-width: 700px; margin: 0 auto 24px; line-height: 1.5; position: relative; z-index: 1; }
-  .big-quote em { color: var(--gold); font-style: normal; }
+  .hero-desc {
+    font-size: 15px;
+    line-height: 1.8;
+    color: #5a4a3a;
+    max-width: 420px;
+    margin-bottom: 50px;
+  }
 
-  .for-you { background: var(--deep); padding: 90px 24px; }
-  .for-you-inner { max-width: 680px; margin: 0 auto; text-align: center; }
-  .for-list { list-style: none; margin-top: 44px; display: flex; flex-direction: column; gap: 16px; text-align: left; }
-  .for-list li { display: flex; align-items: flex-start; gap: 14px; background: rgba(255,255,255,0.02); border-left: 2px solid var(--gold); padding: 16px 20px; border-radius: 0 4px 4px 0; font-size: 15px; color: #c0cce0; line-height: 1.6; }
-  .for-list .dot { color: var(--gold); font-size: 18px; margin-top: 1px; flex-shrink: 0; }
+  .price-row {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    margin-bottom: 32px;
+  }
 
-  .final-cta { background: linear-gradient(180deg, #0a1018 0%, #111827 100%); padding: 100px 24px; text-align: center; }
-  .gold-line { width: 80px; height: 1px; background: var(--gold); margin: 24px auto; }
-  .final-note { font-family: 'Cormorant Garamond', serif; font-size: clamp(16px,2.5vw,22px); font-style: italic; color: var(--muted); max-width: 500px; margin: 0 auto 50px; line-height: 1.7; }
+  .price {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 3rem;
+    font-weight: 600;
+    color: var(--dark);
+  }
 
-  footer { background: #080d14; padding: 30px 24px; text-align: center; font-size: 12px; color: #3a4a5a; letter-spacing: 1px; }
+  .price span {
+    font-size: 1.4rem;
+    font-weight: 300;
+    vertical-align: super;
+    color: var(--brown);
+  }
 
-  @keyframes fadeUp { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
-  .reveal { opacity: 0; transform: translateY(40px); transition: opacity 0.8s ease, transform 0.8s ease; }
-  .reveal.visible { opacity: 1; transform: translateY(0); }
+  .price-note {
+    font-size: 12px;
+    color: var(--soft);
+    line-height: 1.5;
+  }
 
-  @media(max-width: 600px) {
-    .cover-gallery img:nth-child(1), .cover-gallery img:nth-child(4) { display: none; }
-    .cover-gallery img:nth-child(2) { width: 140px; height: 196px; }
-    .cover-gallery img:nth-child(3) { width: 125px; height: 175px; }
+  .cta-group {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    max-width: 360px;
+  }
+
+  .btn-primary {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    background: #25d366;
+    color: #fff;
+    padding: 16px 32px;
+    border-radius: 50px;
+    font-size: 15px;
+    font-weight: 500;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    box-shadow: 0 8px 30px rgba(37,211,102,0.35);
+    letter-spacing: 0.3px;
+  }
+
+  .btn-primary:hover {
+    background: #1db954;
+    transform: translateY(-2px);
+    box-shadow: 0 12px 40px rgba(37,211,102,0.45);
+  }
+
+  .btn-primary svg { width: 22px; height: 22px; flex-shrink: 0; }
+
+  .btn-secondary {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    background: transparent;
+    color: var(--dark);
+    padding: 15px 32px;
+    border-radius: 50px;
+    font-size: 14px;
+    font-weight: 400;
+    text-decoration: none;
+    border: 1.5px solid var(--warm);
+    transition: all 0.3s ease;
+    letter-spacing: 0.3px;
+  }
+
+  .btn-secondary:hover {
+    border-color: var(--brown);
+    color: var(--brown);
+    transform: translateY(-1px);
+  }
+
+  /* ── HERO RIGHT (book cover gallery) ── */
+  .hero-right {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 60px 40px;
+  }
+
+  .cover-main {
+    width: 260px;
+    border-radius: 12px;
+    box-shadow: 30px 40px 80px rgba(43,31,23,0.25), -10px -10px 40px rgba(255,255,255,0.6);
+    position: relative;
+    z-index: 3;
+    transform: rotate(-2deg);
+    transition: transform 0.4s ease;
+    object-fit: cover;
+    aspect-ratio: 3/4;
+  }
+
+  .cover-main:hover { transform: rotate(0deg) scale(1.03); }
+
+  .cover-thumb-group {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    right: 40px;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 2;
+  }
+
+  .cover-thumb {
+    width: 80px;
+    border-radius: 6px;
+    box-shadow: 0 8px 24px rgba(43,31,23,0.18);
+    cursor: pointer;
+    transition: all 0.3s ease;
+    object-fit: cover;
+    aspect-ratio: 3/4;
+    border: 2px solid transparent;
+  }
+
+  .cover-thumb:hover, .cover-thumb.active {
+    transform: scale(1.06);
+    border-color: var(--gold);
+  }
+
+  .float-quote {
+    position: absolute;
+    bottom: 60px;
+    left: 30px;
+    background: rgba(249,243,236,0.92);
+    backdrop-filter: blur(8px);
+    border-left: 3px solid var(--gold);
+    padding: 16px 20px;
+    border-radius: 0 10px 10px 0;
+    max-width: 220px;
+    z-index: 4;
+    box-shadow: 0 8px 30px rgba(43,31,23,0.1);
+    animation: floatUp 3s ease-in-out infinite alternate;
+  }
+
+  @keyframes floatUp {
+    from { transform: translateY(0); }
+    to { transform: translateY(-8px); }
+  }
+
+  .float-quote p {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-size: 13px;
+    line-height: 1.6;
+    color: var(--brown);
+  }
+
+  /* ── DIVIDER ── */
+  .divider {
+    text-align: center;
+    padding: 60px 20px;
+    background: var(--warm);
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(1.1rem, 2vw, 1.4rem);
+    font-style: italic;
+    color: var(--brown);
+    letter-spacing: 0.5px;
+  }
+
+  /* ── WHAT'S INSIDE ── */
+  .section {
+    padding: 100px 80px;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .section-label {
+    font-size: 11px;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    color: var(--gold);
+    font-weight: 500;
+    margin-bottom: 16px;
+  }
+
+  .section-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(2rem, 3.5vw, 3rem);
+    font-weight: 300;
+    color: var(--dark);
+    margin-bottom: 60px;
+    line-height: 1.2;
+  }
+
+  .chapters-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 28px;
+  }
+
+  .chapter-card {
+    background: #fff;
+    border-radius: 16px;
+    padding: 32px 28px;
+    border: 1px solid var(--warm);
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .chapter-card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, var(--gold), var(--brown));
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.3s ease;
+  }
+
+  .chapter-card:hover { transform: translateY(-4px); box-shadow: 0 20px 50px rgba(43,31,23,0.1); }
+  .chapter-card:hover::before { transform: scaleX(1); }
+
+  .chapter-num {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 3rem;
+    font-weight: 300;
+    color: var(--warm);
+    line-height: 1;
+    margin-bottom: 12px;
+  }
+
+  .chapter-name {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: var(--dark);
+    margin-bottom: 10px;
+    line-height: 1.3;
+  }
+
+  .chapter-desc {
+    font-size: 13px;
+    color: var(--soft);
+    line-height: 1.7;
+  }
+
+  /* ── FOR WHO ── */
+  .for-who {
+    background: var(--dark);
+    padding: 100px 80px;
+    text-align: center;
+  }
+
+  .for-who .section-label { color: var(--gold); }
+
+  .for-who .section-title {
+    color: var(--cream);
+    margin-bottom: 50px;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .traits-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 14px;
+    max-width: 700px;
+    margin: 0 auto 60px;
+  }
+
+  .trait {
+    background: rgba(255,255,255,0.07);
+    border: 1px solid rgba(201,151,74,0.3);
+    color: var(--cream);
+    padding: 10px 22px;
+    border-radius: 50px;
+    font-size: 14px;
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-size: 15px;
+    transition: all 0.3s ease;
+  }
+
+  .trait:hover { background: rgba(201,151,74,0.15); border-color: var(--gold); }
+
+  /* ── ORDER CTA ── */
+  .order-section {
+    padding: 100px 80px;
+    text-align: center;
+    background: linear-gradient(135deg, #fdf6ef 0%, #f0e5d8 100%);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .order-section::before {
+    content: '✦';
+    position: absolute;
+    font-size: 300px;
+    color: rgba(201,151,74,0.06);
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    pointer-events: none;
+    font-family: serif;
+  }
+
+  .order-section .section-title {
+    max-width: 600px;
+    margin: 0 auto 16px;
+  }
+
+  .order-desc {
+    font-size: 16px;
+    color: var(--soft);
+    margin-bottom: 50px;
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-size: 1.2rem;
+  }
+
+  .order-box {
+    background: #fff;
+    border-radius: 24px;
+    padding: 50px 60px;
+    max-width: 520px;
+    margin: 0 auto;
+    box-shadow: 0 30px 80px rgba(43,31,23,0.12);
+    border: 1px solid var(--warm);
+    position: relative;
+    z-index: 1;
+  }
+
+  .order-price {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 4rem;
+    font-weight: 600;
+    color: var(--dark);
+    margin-bottom: 8px;
+    line-height: 1;
+  }
+
+  .order-price sup {
+    font-size: 1.5rem;
+    font-weight: 300;
+    vertical-align: super;
+    color: var(--brown);
+  }
+
+  .order-sub {
+    font-size: 13px;
+    color: var(--soft);
+    margin-bottom: 36px;
+    letter-spacing: 0.5px;
+  }
+
+  .order-features {
+    list-style: none;
+    text-align: left;
+    margin-bottom: 36px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .order-features li {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-size: 14px;
+    color: #5a4a3a;
+  }
+
+  .order-features li::before {
+    content: '✓';
+    width: 22px;
+    height: 22px;
+    background: linear-gradient(135deg, var(--gold), var(--brown));
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 11px;
+    flex-shrink: 0;
+    line-height: 22px;
+    text-align: center;
+  }
+
+  .order-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .or-divider {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    color: var(--soft);
+    font-size: 12px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+  }
+
+  .or-divider::before, .or-divider::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: var(--warm);
+  }
+
+  /* ── FOOTER ── */
+  footer {
+    background: var(--dark);
+    color: rgba(249,243,236,0.5);
+    text-align: center;
+    padding: 40px 20px;
+    font-size: 13px;
+    line-height: 2;
+  }
+
+  footer a { color: var(--gold); text-decoration: none; }
+  footer strong { color: var(--cream); }
+
+  /* ── RESPONSIVE ── */
+  @media (max-width: 900px) {
+    .hero { grid-template-columns: 1fr; min-height: auto; }
+    .hero-left { padding: 60px 30px 40px; }
+    .hero-right { padding: 20px 30px 60px; min-height: 450px; }
+    .cover-main { width: 200px; }
+    .cover-thumb-group { right: 20px; }
+    .cover-thumb { width: 65px; }
+    .chapters-grid { grid-template-columns: 1fr 1fr; }
+    .section { padding: 70px 30px; }
+    .for-who { padding: 70px 30px; }
+    .order-section { padding: 70px 30px; }
+    .order-box { padding: 36px 28px; }
+  }
+
+  @media (max-width: 600px) {
+    .chapters-grid { grid-template-columns: 1fr; }
+    .cover-thumb-group { display: none; }
+    .cover-main { transform: none; width: 220px; }
+    .float-quote { display: none; }
+  }
+
+  /* ── ENTRANCE ANIMATIONS ── */
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  .hero-left > * {
+    animation: fadeUp 0.8s ease both;
+  }
+  .hero-left > *:nth-child(1) { animation-delay: 0.1s; }
+  .hero-left > *:nth-child(2) { animation-delay: 0.2s; }
+  .hero-left > *:nth-child(3) { animation-delay: 0.3s; }
+  .hero-left > *:nth-child(4) { animation-delay: 0.4s; }
+  .hero-left > *:nth-child(5) { animation-delay: 0.5s; }
+  .hero-left > *:nth-child(6) { animation-delay: 0.6s; }
+  .hero-left > *:nth-child(7) { animation-delay: 0.7s; }
+
+  .hero-right {
+    animation: fadeUp 1s ease 0.4s both;
   }
 </style>
 </head>
 <body>
 
+<!-- ══ HERO ══ -->
 <section class="hero">
-  <div class="star-top">✦ ✦ ✦</div>
-  <div class="hero-eyebrow">A Complete Self-Help eBook</div>
-  <h1 class="hero-title">Stillness in<br/><span>the Storm</span></h1>
-  <p class="hero-subtitle">A Soul Guide for the Deeply Emotional Heart</p>
-
-  <div class="cover-gallery">
-    <img src="https://raw.githubusercontent.com/jamil478/My-sobi-/refs/heads/main/1000090894.png" alt="Cover"/>
-    <img src="https://raw.githubusercontent.com/jamil478/My-sobi-/refs/heads/main/1000090896.png" alt="Cover"/>
-    <img src="https://raw.githubusercontent.com/jamil478/My-sobi-/refs/heads/main/1000090898.png" alt="Cover"/>
-    <img src="https://raw.githubusercontent.com/jamil478/My-sobi-/refs/heads/main/1000090900.png" alt="Cover"/>
+  <div class="hero-left">
+    <div class="badge">✦ Soul Guide · Self-Help</div>
+    <h1 class="hero-title">Stillness in<br><em>the Storm</em></h1>
+    <p class="hero-subtitle">A Soul Guide for the Deeply Emotional Heart</p>
+    <p class="hero-author">by Jamil</p>
+    <p class="hero-desc">
+      A gentle, compassionate guide for those who feel everything deeply — and have been waiting for someone to say: you are not broken, you are not too much. Your peace begins here.
+    </p>
+    <div class="price-row">
+      <div class="price"><span>$</span>6.99</div>
+      <div class="price-note">Digital eBook<br>Instant Delivery</div>
+    </div>
+    <div class="cta-group">
+      <a class="btn-primary" href="https://wa.me/8801616700055?text=Hi%20Jamil!%20I%20want%20to%20order%20%22Stillness%20in%20the%20Storm%22%20eBook%20for%20%246.99.%20Please%20share%20payment%20details." target="_blank">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+        Order via WhatsApp
+      </a>
+      <a class="btn-secondary" href="mailto:jamilhassanxy@gmail.com?subject=Order%3A%20Stillness%20in%20the%20Storm%20eBook&body=Hi%20Jamil%2C%0A%0AI%20would%20like%20to%20order%20%22Stillness%20in%20the%20Storm%22%20eBook%20for%20%246.99.%0A%0APlease%20send%20me%20payment%20instructions.%0A%0AThank%20you!">
+        ✉ Order via Email
+      </a>
+    </div>
   </div>
 
-  <div class="divider"></div>
-  <p class="tagline">"You were never broken.<br/>You were just never shown how to find your calm."</p>
+  <div class="hero-right">
+    <img id="mainCover" class="cover-main"
+      src="https://raw.githubusercontent.com/jamil478/My-sobi-/refs/heads/main/1000090898.png"
+      alt="Stillness in the Storm Book Cover">
 
-  <div class="cta-wrap">
-    <div class="price-tag">Get Your Copy Today — Only <strong>$6.99</strong></div>
-    <a class="cta-btn" href="#" onclick="sendWhatsApp(event)">
-      <span class="wa-icon">💬</span> Order via WhatsApp
-    </a>
-    <span class="cta-note">You'll receive your PDF instantly after payment</span>
-  </div>
-</section>
+    <div class="cover-thumb-group">
+      <img class="cover-thumb active"
+        src="https://raw.githubusercontent.com/jamil478/My-sobi-/refs/heads/main/1000090898.png"
+        alt="Cover 1" onclick="switchCover(this)">
+      <img class="cover-thumb"
+        src="https://raw.githubusercontent.com/jamil478/My-sobi-/refs/heads/main/1000090896.png"
+        alt="Cover 2" onclick="switchCover(this)">
+      <img class="cover-thumb"
+        src="https://raw.githubusercontent.com/jamil478/My-sobi-/refs/heads/main/1000090900.png"
+        alt="Cover 3" onclick="switchCover(this)">
+      <img class="cover-thumb"
+        src="https://raw.githubusercontent.com/jamil478/My-sobi-/refs/heads/main/1000090894.png"
+        alt="Cover 4" onclick="switchCover(this)">
+    </div>
 
-<section class="about">
-  <span class="section-label reveal">About This Book</span>
-  <h2 class="section-title reveal">For the ones who feel everything — deeply, fiercely, quietly.</h2>
-  <div class="about-text reveal">
-    <p>If you have ever cried without knowing exactly why, felt someone else's pain as if it were your own, or stayed up at 2am replaying a conversation that everyone else forgot — this book was written for you.</p>
-    <p>Written by Jamil, <em>Stillness in the Storm</em> is a deeply personal guide for emotionally sensitive people aged 20 and above — both men and women — who are ready to stop suffering in silence and start building real, lasting inner peace.</p>
-    <p>This is not a book that tells you to feel less. It is a book that teaches you how to feel fully — without losing yourself in the storm.</p>
-  </div>
-</section>
-
-<section class="feelings">
-  <div class="feelings-inner">
-    <span class="section-label reveal">Do You Feel This?</span>
-    <h2 class="section-title reveal">You are not alone in these moments…</h2>
-    <div class="feelings-grid">
-      <div class="feeling-card reveal"><div class="feeling-icon">🌊</div><p class="feeling-text">Emotions that feel too big to hold — flooding you without warning</p></div>
-      <div class="feeling-card reveal"><div class="feeling-icon">🌙</div><p class="feeling-text">Lying awake at night, replaying words said and unsaid</p></div>
-      <div class="feeling-card reveal"><div class="feeling-icon">💔</div><p class="feeling-text">Feeling "too much" in a world that never slows down for you</p></div>
-      <div class="feeling-card reveal"><div class="feeling-icon">🫂</div><p class="feeling-text">Carrying other people's pain as if it belongs to you</p></div>
-      <div class="feeling-card reveal"><div class="feeling-icon">😶</div><p class="feeling-text">Saying yes when every part of you wants to say no</p></div>
-      <div class="feeling-card reveal"><div class="feeling-icon">✨</div><p class="feeling-text">Craving peace — but not knowing how to actually get there</p></div>
+    <div class="float-quote">
+      <p>"You were never broken. You were just never shown how to find your calm."</p>
     </div>
   </div>
 </section>
 
-<section class="chapters">
-  <div class="chapters-inner">
-    <span class="section-label reveal">Inside the Book</span>
-    <h2 class="section-title reveal">9 Chapters of Genuine Transformation</h2>
-    <div class="chapter-list">
-      <div class="ch-item reveal"><span class="ch-num">✦</span><div class="ch-content"><div class="ch-title">A Letter to You — Before You Begin</div><div class="ch-desc">A personal opening that meets you exactly where you are</div></div></div>
-      <div class="ch-item reveal"><span class="ch-num">01</span><div class="ch-content"><div class="ch-title">Understanding Your Emotional World</div><div class="ch-desc">Why you feel so deeply — and why that is a gift, not a flaw</div></div></div>
-      <div class="ch-item reveal"><span class="ch-num">02</span><div class="ch-content"><div class="ch-title">Why Highly Emotional People Struggle More</div><div class="ch-desc">The real reasons sensitivity makes life harder — and what to do about it</div></div></div>
-      <div class="ch-item reveal"><span class="ch-num">03</span><div class="ch-content"><div class="ch-title">The Art of Feeling Without Drowning</div><div class="ch-desc">How to let emotions move through you instead of consuming you</div></div></div>
-      <div class="ch-item reveal"><span class="ch-num">04</span><div class="ch-content"><div class="ch-title">Healing the Mind, One Thought at a Time</div><div class="ch-desc">Breaking the patterns of overthinking, catastrophizing and self-blame</div></div></div>
-      <div class="ch-item reveal"><span class="ch-num">05</span><div class="ch-content"><div class="ch-title">Building Inner Peace as a Daily Habit</div><div class="ch-desc">Simple rituals that create calm no matter how loud the world gets</div></div></div>
-      <div class="ch-item reveal"><span class="ch-num">06</span><div class="ch-content"><div class="ch-title">Setting Boundaries Without Guilt</div><div class="ch-desc">How to protect your peace while still being a loving, caring person</div></div></div>
-      <div class="ch-item reveal"><span class="ch-num">07</span><div class="ch-content"><div class="ch-title">Letting Go of What You Cannot Control</div><div class="ch-desc">Finding freedom by releasing the past and anxiety of the future</div></div></div>
-      <div class="ch-item reveal"><span class="ch-num">08</span><div class="ch-content"><div class="ch-title">Self-Compassion — Being Kind to Yourself</div><div class="ch-desc">The most powerful thing you can do — and the hardest for emotional people</div></div></div>
-      <div class="ch-item reveal"><span class="ch-num">09</span><div class="ch-content"><div class="ch-title">Finding Calm in a Chaotic World</div><div class="ch-desc">Building your inner sanctuary — no matter what is happening outside</div></div></div>
+<!-- ── DIVIDER QUOTE ── -->
+<div class="divider">
+  "You feel deeply. That is one of the most powerful and beautiful things a human being can do."
+</div>
+
+<!-- ── WHAT'S INSIDE ── -->
+<section class="section">
+  <p class="section-label">What's Inside</p>
+  <h2 class="section-title">9 Chapters of Healing,<br>Written Just for You</h2>
+  <div class="chapters-grid">
+    <div class="chapter-card">
+      <div class="chapter-num">01</div>
+      <div class="chapter-name">Understanding Your Emotional World</div>
+      <div class="chapter-desc">Discover why you feel more deeply — and why that is a gift, not a flaw.</div>
+    </div>
+    <div class="chapter-card">
+      <div class="chapter-num">02</div>
+      <div class="chapter-name">Why Highly Emotional People Struggle More</div>
+      <div class="chapter-desc">The hidden challenges of emotional depth — and the hidden gifts within them.</div>
+    </div>
+    <div class="chapter-card">
+      <div class="chapter-num">03</div>
+      <div class="chapter-name">The Art of Feeling Without Drowning</div>
+      <div class="chapter-desc">Grounding techniques and practices to feel fully without being consumed.</div>
+    </div>
+    <div class="chapter-card">
+      <div class="chapter-num">04</div>
+      <div class="chapter-name">Healing the Mind, One Thought at a Time</div>
+      <div class="chapter-desc">Rewrite the stories your mind creates and break free from cognitive distortions.</div>
+    </div>
+    <div class="chapter-card">
+      <div class="chapter-num">05</div>
+      <div class="chapter-name">Building Inner Peace as a Daily Habit</div>
+      <div class="chapter-desc">Morning rituals, evening releases, and micro-moments of calm.</div>
+    </div>
+    <div class="chapter-card">
+      <div class="chapter-num">06</div>
+      <div class="chapter-name">Setting Boundaries Without Guilt</div>
+      <div class="chapter-desc">Learn to say no with love — and finally stop disappearing inside your own life.</div>
+    </div>
+    <div class="chapter-card">
+      <div class="chapter-num">07</div>
+      <div class="chapter-name">Letting Go of What You Cannot Control</div>
+      <div class="chapter-desc">Release the past, quiet the future, and return to what is real right now.</div>
+    </div>
+    <div class="chapter-card">
+      <div class="chapter-num">08</div>
+      <div class="chapter-name">Self-Compassion — Being Kind to Yourself</div>
+      <div class="chapter-desc">The most important practice: treating yourself with the care you give others.</div>
+    </div>
+    <div class="chapter-card">
+      <div class="chapter-num">09</div>
+      <div class="chapter-name">Finding Calm in a Chaotic World</div>
+      <div class="chapter-desc">Build your inner sanctuary — a stillness you can access anywhere, anytime.</div>
     </div>
   </div>
 </section>
 
-<section class="quote-banner">
-  <p class="big-quote reveal">"You have been so kind to so many people.<br/>It is time to include <em>yourself</em> in that circle of care."</p>
-  <div class="divider"></div>
+<!-- ── FOR WHO ── -->
+<section class="for-who">
+  <p class="section-label">This Book Is For You If…</p>
+  <h2 class="section-title">You've always felt a little too much for this world</h2>
+  <div class="traits-grid">
+    <div class="trait">You cry when no one is watching</div>
+    <div class="trait">You feel others' pain as your own</div>
+    <div class="trait">You overthink everything</div>
+    <div class="trait">You love deeply but forget yourself</div>
+    <div class="trait">You've been told you're "too sensitive"</div>
+    <div class="trait">You struggle to say no</div>
+    <div class="trait">You carry the weight of others</div>
+    <div class="trait">You lie awake with "what ifs"</div>
+    <div class="trait">You're hard on yourself</div>
+    <div class="trait">You want peace, but don't know where to start</div>
+  </div>
 </section>
 
-<section class="for-you">
-  <div class="for-you-inner">
-    <span class="section-label reveal">Is This Book For You?</span>
-    <h2 class="section-title reveal">This book is for you if…</h2>
-    <ul class="for-list">
-      <li class="reveal"><span class="dot">✦</span> You are 20+ years old and feel emotions more intensely than most people around you</li>
-      <li class="reveal"><span class="dot">✦</span> You are a man or woman who has been told you are "too sensitive" or "too emotional"</li>
-      <li class="reveal"><span class="dot">✦</span> You absorb the energy of others and often feel drained after social interactions</li>
-      <li class="reveal"><span class="dot">✦</span> You lie awake at night overthinking conversations, choices, or fears about the future</li>
-      <li class="reveal"><span class="dot">✦</span> You want to stop suffering in silence and finally feel at home inside your own mind</li>
-      <li class="reveal"><span class="dot">✦</span> You are ready to find peace — not someday, but starting today</li>
+<!-- ── ORDER ── -->
+<section class="order-section" id="order">
+  <p class="section-label">Get Your Copy</p>
+  <h2 class="section-title">Your peace begins with one decision</h2>
+  <p class="order-desc">"The stillness is already inside you."</p>
+
+  <div class="order-box">
+    <div class="order-price"><sup>$</sup>6.99</div>
+    <div class="order-sub">One-time payment · Instant digital delivery</div>
+
+    <ul class="order-features">
+      <li>Complete 9-chapter eBook (PDF)</li>
+      <li>Grounding & healing techniques</li>
+      <li>Practical daily peace habits</li>
+      <li>Self-compassion practices</li>
+      <li>Instant delivery after payment</li>
     </ul>
+
+    <div class="order-buttons">
+      <a class="btn-primary" href="https://wa.me/8801616700055?text=Hi%20Jamil!%20I%20want%20to%20order%20%22Stillness%20in%20the%20Storm%22%20eBook%20for%20%246.99.%20Please%20share%20payment%20details." target="_blank">
+        <svg viewBox="0 0 24 24" fill="currentColor" style="width:22px;height:22px"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+        Order on WhatsApp
+      </a>
+      <div class="or-divider">or</div>
+      <a class="btn-secondary" href="mailto:jamilhassanxy@gmail.com?subject=Order%3A%20Stillness%20in%20the%20Storm%20eBook&body=Hi%20Jamil%2C%0A%0AI%20would%20like%20to%20order%20%22Stillness%20in%20the%20Storm%22%20eBook%20for%20%246.99.%0A%0AName%3A%0APayment%20method%3A%0A%0AThank%20you!">
+        ✉ Order via Email
+      </a>
+    </div>
   </div>
 </section>
 
-<section class="final-cta">
-  <span class="section-label reveal">Get Your Copy</span>
-  <h2 class="section-title reveal" style="font-size:clamp(30px,6vw,58px);font-style:italic;color:#fff;">Your stillness is waiting.</h2>
-  <div class="gold-line"></div>
-  <p class="final-note reveal">A complete PDF eBook, delivered to you personally.<br/>Read at your own pace. Return whenever the storm arrives.</p>
-  <div class="cta-wrap reveal" style="opacity:1;animation:none;">
-    <div class="price-tag">One-time payment — only <strong>$6.99</strong></div>
-    <a class="cta-btn" href="#" onclick="sendWhatsApp(event)"><span class="wa-icon">💬</span> Order on WhatsApp Now</a>
-    <span class="cta-note">Message Jamil directly · Fast &amp; Secure · PDF sent instantly</span>
-  </div>
-  <div style="margin-top:60px;opacity:0.3;">
-    <div class="divider"></div>
-    <p style="font-family:'Cormorant Garamond',serif;font-style:italic;font-size:16px;color:var(--muted);">✦ Stillness in the Storm ✦</p>
-  </div>
-</section>
-
+<!-- ── FOOTER ── -->
 <footer>
-  <span>© 2025 Jamil · Stillness in the Storm · All rights reserved</span>
+  <strong>Stillness in the Storm</strong> · by Jamil<br>
+  📱 <a href="https://wa.me/8801616700055">WhatsApp: +880 1616 700055</a> &nbsp;·&nbsp;
+  ✉ <a href="mailto:jamilhassanxy@gmail.com">jamilhassanxy@gmail.com</a><br><br>
+  © 2025 Jamil · All rights reserved
 </footer>
 
 <script>
-  function sendWhatsApp(e) {
-    e.preventDefault();
-    var number = '8801616700055';
-    var msg = encodeURIComponent("Hi Jamil! \ud83d\udc4b\n\nI'd like to order the eBook:\n\ud83d\udcd6 *Stillness in the Storm* \u2014 $6.99\n\nPlease send me the payment details. Thank you!");
-    window.open('https://wa.me/' + number + '?text=' + msg, '_blank');
+  function switchCover(el) {
+    document.getElementById('mainCover').src = el.src;
+    document.querySelectorAll('.cover-thumb').forEach(t => t.classList.remove('active'));
+    el.classList.add('active');
   }
-
-  var reveals = document.querySelectorAll('.reveal');
-  var observer = new IntersectionObserver(function(entries) {
-    entries.forEach(function(entry) {
-      if (entry.isIntersecting) {
-        entry.target.classList.add('visible');
-        observer.unobserve(entry.target);
-      }
-    });
-  }, { threshold: 0.12 });
-  reveals.forEach(function(el) { observer.observe(el); });
 </script>
+
 </body>
 </html>
